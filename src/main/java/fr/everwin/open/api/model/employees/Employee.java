@@ -28,7 +28,6 @@ import fr.everwin.open.api.model.core.DataLink;
 import fr.everwin.open.api.model.core.SpecificData;
 import fr.everwin.open.api.util.JsonDate;
 import fr.everwin.open.api.util.JsonListDatalink;
-import fr.everwin.open.api.util.JsonListDatalinkKey;
 
 import java.util.Date;
 import java.util.List;
@@ -50,13 +49,9 @@ public class Employee extends BasicObject {
     private DataLink entity;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "secondEntity")
     private List<DataLink> secondEntities;
     private DataLink financialEntity;
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "secondFinancialEntity")
     private List<DataLink> secondFinancialEntities;
     @JsonDeserialize(using = JsonDate.Deserializer.class)
     @JsonSerialize(using = JsonDate.Serializer.class)
@@ -69,15 +64,11 @@ public class Employee extends BasicObject {
     private Date birthDate;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "profile")
     private List<DataLink> profiles;
     private DataLink mainProfile;
     private DataLink manager;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "supportedCommercial")
     private List<DataLink> supportedCommercials;
     private DataLink workMode;
     private DataLink contractType;
@@ -95,8 +86,6 @@ public class Employee extends BasicObject {
     private String function;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "profile")
     private List<DataLink> languages;
     private DataLink nationality;
     private String phone;

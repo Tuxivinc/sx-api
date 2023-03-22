@@ -19,11 +19,9 @@ package fr.everwin.open.api.model.accounts;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import fr.everwin.open.api.model.core.BasicObject;
 import fr.everwin.open.api.model.core.DataLink;
 import fr.everwin.open.api.util.JsonListDatalink;
-import fr.everwin.open.api.util.JsonListDatalinkKey;
 
 import java.util.List;
 
@@ -42,8 +40,6 @@ public class Account extends BasicObject {
     private Short type;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "entities")
     private List<DataLink> entities;
 
     public List<DataLink> getEntities() {

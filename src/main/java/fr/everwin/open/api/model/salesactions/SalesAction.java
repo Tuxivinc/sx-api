@@ -12,7 +12,6 @@ import fr.everwin.open.api.model.core.DataLink;
 import fr.everwin.open.api.model.core.SpecificData;
 import fr.everwin.open.api.util.JsonDate;
 import fr.everwin.open.api.util.JsonListDatalink;
-import fr.everwin.open.api.util.JsonListDatalinkKey;
 import fr.everwin.open.api.util.JsonTime;
 
 import java.util.Date;
@@ -32,15 +31,11 @@ public class SalesAction extends BasicObject {
     private DataLink mainPlayer;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "secondaryPlayer")
     private List<DataLink> secondaryPlayers;
     private DataLink company;
     private DataLink mainContact;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "secondaryContact")
     private List<DataLink> secondaryContacts;
     private DataLink opportunity;
     @JsonDeserialize(using = JsonDate.Deserializer.class)
@@ -65,8 +60,6 @@ public class SalesAction extends BasicObject {
     private Short isPrivate;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "equipment")
     private List<DataLink> equipments;
     private DataLink marketingCampaign;
     private DataLink lead;

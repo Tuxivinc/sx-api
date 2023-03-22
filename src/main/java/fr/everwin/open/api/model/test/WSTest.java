@@ -24,7 +24,6 @@ import fr.everwin.open.api.model.core.DataLink;
 import fr.everwin.open.api.model.core.SpecificData;
 import fr.everwin.open.api.util.JsonDate;
 import fr.everwin.open.api.util.JsonListDatalink;
-import fr.everwin.open.api.util.JsonListDatalinkKey;
 
 import java.util.Date;
 import java.util.List;
@@ -56,8 +55,6 @@ public class WSTest {
     private DataLink wstWss;
  
     @JsonDeserialize(contentUsing = JsonListDatalink.Deserializer.class)
-    @JsonSerialize(contentUsing = JsonListDatalink.Serializer.class)
-    @JsonListDatalinkKey(key = "wstWsc")
     private List<DataLink> wstWscs;
     private DataLink wst2Wss;
     private String id2Wst;
